@@ -97,6 +97,15 @@ const isAscendingOrder = function (list) {
   isDescendingOrder
   This function checks if a given list is in descending order or not
 */
+const giveLesser = function (num1, num2) {
+  if (num1 < num2) {
+    return num1;
+  }
+  return num2;
+};
+const isDescendingOrder = function (list) {
+  return list[list.length - 1] == list.reduce(giveLesser, list[0]);
+};
 
 
 /*
