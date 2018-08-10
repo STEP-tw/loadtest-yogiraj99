@@ -19,7 +19,13 @@ const selectEven = function (list) {
   sumUp
   This function sums up all the numbers of a given list
 */
-
+const addNum = function (num1, num2) {
+  return num1 + num2;
+};
+const sumUp = function (list, initialValue) {
+  initialValue = (initialValue) ? initialValue : 0;
+  return list.reduce(addNum, initialValue);
+};
 
 /*
   reverseList
