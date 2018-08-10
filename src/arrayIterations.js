@@ -78,7 +78,12 @@ const leastInList = function (list) {
   This function provides a list of lengths corresponding to the list of strings
   given as an argument
 */
-
+const giveLength = function (element) {
+  return element.length;
+};
+const mapLengths = function (list) {
+  return list.map(giveLength);
+};
 
 /*
   isAscendingOrder
