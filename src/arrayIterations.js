@@ -89,7 +89,9 @@ const mapLengths = function (list) {
   isAscendingOrder
   This function checks if a given list is in ascending order or not
 */
-
+const isAscendingOrder = function (list) {
+  return list[list.length - 1] == list.reduce(giveGreater, list[0]);
+};
 
 /*
   isDescendingOrder
