@@ -2,7 +2,10 @@
   selectOdd
   This function selects all the odd numbers from a given list of numbers
 */
-
+const isOdd = require('./basic').isOdd;
+const selectOdd = function (list) {
+  return list.filter(isOdd);
+};
 /*
   selectEven
   This function selects all the even numbers from a given list of numbers
@@ -76,16 +79,16 @@
 */
 
 
-exports.selectOdd=selectOdd;
-exports.selectEven=selectEven;
-exports.sumUp=sumUp;
-exports.reverseList=reverseList;
-exports.reverseFibo=reverseFibo;
-exports.greatestInList=greatestInList;
-exports.leastInList=leastInList;
-exports.mapLengths=mapLengths;
-exports.isAscendingOrder=isAscendingOrder;
-exports.isDescendingOrder=isDescendingOrder;
-exports.extractDigits=extractDigits;
-exports.countBelowThreshold=countBelowThreshold;
-exports.countAboveThreshold=countAboveThreshold;
+exports.selectOdd = selectOdd;
+exports.selectEven = selectEven;
+exports.sumUp = sumUp;
+exports.reverseList = reverseList;
+exports.reverseFibo = reverseFibo;
+exports.greatestInList = greatestInList;
+exports.leastInList = leastInList;
+exports.mapLengths = mapLengths;
+exports.isAscendingOrder = isAscendingOrder;
+exports.isDescendingOrder = isDescendingOrder;
+exports.extractDigits = extractDigits;
+exports.countBelowThreshold = countBelowThreshold;
+exports.countAboveThreshold = countAboveThreshold;
