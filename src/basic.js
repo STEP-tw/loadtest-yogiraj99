@@ -88,6 +88,9 @@ const greatestOf = function (num1, num2, num3) {
   averageOf
   This function returns the average of three numbers
 */
+const averageOf = function (num1, num2, num3) {
+  return (num1 + num2 + num3) / 3;
+};
 
 
 exports.isEven = isEven;
