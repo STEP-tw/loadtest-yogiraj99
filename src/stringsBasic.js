@@ -7,12 +7,6 @@
   countVowels("coffee") => 3
 */
 
-const countVowels=function(text) {
-  let match=text.match(/[aeiou]/ig);
-  if(!match)
-    return 0;
-  return match.length;
-}
 
 /*
   countConsonants
@@ -25,12 +19,6 @@ const countVowels=function(text) {
   countConsonants("123ab") => 1
 */
 
-const countConsonants=function(text) {
-  let match=text.match(/[bcdfghjklmnpqrstvwxyz]/ig);
-  if(!match)
-    return 0;
-  return match.length;
-}
 
 /*
   isPalindrome
@@ -44,14 +32,6 @@ const countConsonants=function(text) {
   isPalindrome("Madam") => false(case sensitive)
 */
 
-const isPalindrome=function(text) {
-  let lastPos=text.length-1;
-  for (var i = 0; i < lastPos/2; i++) {
-    if(text[i]!=text[lastPos-i])
-      return false;
-  }
-  return true;
-}
 
 /*
   reverse
@@ -61,14 +41,6 @@ const isPalindrome=function(text) {
   reverse("") => ""
 */
 
-const reverse=function(text) {
-  let reversed="";
-  for (var i = 0; i < text.length; i++) {
-    reversed=text[i]+reversed;
-  }
-
-  return reversed;
-}
 
 exports.countVowels=countVowels;
 exports.countConsonants=countConsonants;

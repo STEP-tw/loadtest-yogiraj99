@@ -6,23 +6,7 @@
   list2=[3,4,5];
   union(list1,list2) => [1,2,3,4,5]
 */
-const union=function(firstList,secondList) {
-  let newList=[];
-  let set={};
-  for (var i = 0; i < firstList.length; i++) {
-    if(!set[firstList[i]]) {
-      newList.push(firstList[i]);
-      set[firstList[i]]=true;
-    }
-  }
-  for (var i = 0; i < secondList.length; i++) {
-    if(!set[secondList[i]]) {
-      newList.push(secondList[i]);
-      set[secondList[i]]=true;
-    }
-  }
-  return newList;
-}
+
 
 /*
   intersection
@@ -32,17 +16,7 @@ const union=function(firstList,secondList) {
   list2=[2,3,4];
   intersection(list1,list2) => [2,3]
 */
-const intersection=function(firstList,secondList) {
-  let newList=[];
-  let set={};
-  for (var i = 0; i < firstList.length; i++) {
-    if(!set[firstList[i]] && secondList.includes(firstList[i])) {
-      newList.push(firstList[i]);
-      set[firstList[i]]=true;
-    }
-  }
-  return newList;
-}
+
 
 /*
   difference
@@ -56,17 +30,7 @@ const intersection=function(firstList,secondList) {
   difference(list2,list1) => [4]
   difference(list1,list1) => []
 */
-const difference=function(firstList,secondList) {
-  let newList=[];
-  let set={};
-  for (var i = 0; i < firstList.length; i++) {
-    if(!set[firstList[i]] && !secondList.includes(firstList[i])) {
-      newList.push(firstList[i]);
-      set[firstList[i]]=true;
-    }
-  }
-  return newList;
-}
+
 
 /*
   isSubset
@@ -76,11 +40,7 @@ const difference=function(firstList,secondList) {
   isSubset(list1,list2) => true
   isSubset(list2,list1) => false
 */
-const isSubset=function(firstList,secondList) {
-  return secondList.every(function(element){
-    return firstList.includes(element);
-  });
-}
+
 
 /*
   isReverse
@@ -97,16 +57,7 @@ const isSubset=function(firstList,secondList) {
   isReverse(list2,list1) => false
 */
 
-const isReverse=function(firstList,secondList) {
-  if(firstList.length!=secondList.length)
-    return false;
-  let lastPos=firstList.length-1;
-  for (var i = 0; i < firstList.length; i++) {
-    if(firstList[i]!=secondList[lastPos-i])
-      return false;
-  }
-  return true;
-}
+
 
 /*
   areEqual.
@@ -123,13 +74,7 @@ const isReverse=function(firstList,secondList) {
   areEqual(list1,list2) => false
   areEqual(list2,list1) => false
 */
-const areEqual=function(firstList,secondList) {
-  if(firstList.length!=secondList.length)
-    return false;
-  return firstList.every(function(element,index){
-    return element==secondList[index];
-  });
-}
+
 
 /*
   isSameSet.
@@ -154,10 +99,6 @@ const areEqual=function(firstList,secondList) {
   isSameSet(list1,list2) => false
   isSameSet(list2,list1) => false
 */
-
-const isSameSet=function(firstList,secondList) {
-  return isSubset(firstList,secondList) && isSubset(secondList,firstList);
-}
 
 
 

@@ -1,4 +1,3 @@
-const reverse=require('./stringsBasic.js').reverse;
 /*
   strip
   This function removes leading and trailing spaces of the given text
@@ -9,9 +8,6 @@ const reverse=require('./stringsBasic.js').reverse;
   strip("hello") => "hello" (no spaces removed)
 */
 
-const strip=function(text) {
-  return text.replace(/^\s+/,"").replace(/\s+$/,"");
-}
 
 /*
   camelCase
@@ -21,29 +17,7 @@ const strip=function(text) {
   camelCase(["camel","case"]) => "camelCase"
 */
 
-const capitalize=function(text) {
-  return text[0].toUpperCase() + text.slice(1).toLowerCase();
-}
 
-const isNotEmpty=function(string) {
-  return string!="";
-}
-
-const trim=function(string) {
-  return string.trim();
-}
-
-const camelCase=function(listOfWords) {
-  let nonEmptyWords=listOfWords.filter(isNotEmpty).map(trim);
-  if(nonEmptyWords.length==0)
-    return "";
-
-  let firstWord=nonEmptyWords[0].toLowerCase();
-  let restOfWords=nonEmptyWords.slice(1).map(capitalize);
-  let allWords=[firstWord].concat(restOfWords);
-
-  return allWords.join("");
-}
 
 /*
   uniqueLetterCount
@@ -55,14 +29,7 @@ const camelCase=function(listOfWords) {
   uniqueLetterCount("HeLo") => 4
   uniqueLetterCount("a,b,c") => 3
 */
-const uniqueLetterCount=function(text) {
-  let letters={};
-  for (var i = 0; i < text.length; i++) {
-    if(text[i].match(/[a-z]/i))
-      letters[text[i].toUpperCase()]=true;
-  }
-  return Object.keys(letters).length;
-}
+
 
 
 /*
@@ -85,9 +52,6 @@ const uniqueLetterCount=function(text) {
   reverseWordOrder("hello 123 +-&*") => "+-&* 123 hello"
 */
 
-const reverseWordOrder=function(text) {
-  return text.split(" ").reverse().join(" ");
-}
 
 /*
   reverseWords
@@ -102,9 +66,6 @@ const reverseWordOrder=function(text) {
   reverseWords(" hello  world " => " olleh  dlrow ")
 */
 
-const reverseWords=function(text) {
-  return text.split(" ").map(reverse).join(" ");
-}
 
 /*
   interleave
@@ -120,15 +81,6 @@ const reverseWords=function(text) {
   interleave(" 123", ",") => " ,1,2,3"
 */
 
-const interleave=function(text,separator) {
-  let actualSeparator="";
-  let interleaved="";
-  for (var i = 0; i < text.length; i++) {
-    interleaved=interleaved + actualSeparator + text[i];
-    actualSeparator=separator;
-  }
-  return interleaved;
-}
 
 /*
   wordFrequency
@@ -144,16 +96,7 @@ const interleave=function(text,separator) {
 
 */
 
-const isEqualToWordGen=function(word) {
-  return function(anotherWord) {
-    return anotherWord==word;
-  }
-}
 
-const wordFrequency=function(text,word) {
-  var isEqualToWord=isEqualToWordGen(word);
-  return text.split(/\s+/).filter(isEqualToWord).length;
-}
 
 /*
   strikeOut
@@ -172,13 +115,6 @@ const wordFrequency=function(text,word) {
   the first one is used.
   strikeOut("hello","hello") => "-ello";
 */
-
-const strikeOut=function(text,letter) {
-  if(letter.length==0 || text.length==0)
-    return text;
-  let r=new RegExp(letter[0],'g');
-  return text.replace(r,"-");
-}
 
 exports.strip=strip;
 exports.camelCase=camelCase;
