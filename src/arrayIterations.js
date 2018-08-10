@@ -31,14 +31,38 @@ const sumUp = function (list, initialValue) {
   reverseList
   This function reverses the elements of a given list and provides a new list
 */
-
+const reverseList = function (list) {
+  return list.reduce(pushInList, []);
+};
 
 /*
   reverseFibo
   This function provides the first n terms of a fibonacci series in reverse order
   This function accepts a single number, n as its only argument.
 */
-
+const reverseFibo = function (nth) {
+  let currentNum = 1;
+  let preNum = 0;
+  let nextNum = 0;
+  let reverseFiboList = [];
+  if (nth == 0 || nth < 0) {
+    return reverseFiboList;
+  }
+  reverseFiboList.unshift(0);
+  if (nth == 1) {
+    return reverseFiboList;
+  }
+  reverseFiboList.unshift(1);
+  if (nth != 2) {
+    for (let counter = 3; counter <= nth; counter++) {
+      reverseFiboList.unshift(currentNum + preNum);
+      nextNum = currentNum + preNum;
+      preNum = currentNum;
+      currentNum = nextNum;
+    }
+  }
+  return reverseFiboList;
+};
 /*
   greatestInList
   This function provides the greatest number in a list, given a list of numbers
@@ -65,13 +89,13 @@ const least = function (num1, num2) {
     return num1;
   }
   return num2;
-}
+};
 const leastInList = function (list) {
   if (list === []) {
     return undefined;
   }
   return list.reduce(least, list[0]);
-}
+};
 
 /*
   mapLengths
@@ -126,12 +150,27 @@ const extractDigits = function (number) {
   countBelowThreshold
   This function provides the count of numbers below given threshold
 */
-
+const isAboveThreshold = function (threshold) {
+  return function (num) {
+    return num > threshold;
+  };
+};
+const countAboveThreshold = function (list, threshold) {
+  return list.filter(isAboveThreshold(threshold)).length;
+};
 
 /*
   countAboveThreshold
   This function provides the count of numbers above given threshold
 */
+const isBelowThreshold = function (threshold) {
+  return function (num) {
+    return num < threshold;
+  }
+};
+const countBelowThreshold = function (list, threshold) {
+  return list.filter(isBelowThreshold(threshold)).length;
+};
 
 
 exports.selectOdd = selectOdd;
