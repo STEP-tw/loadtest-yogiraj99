@@ -51,7 +51,16 @@ const gcd = function (firstNumber, secondNumber) {
   lcm
   This function returns the least common multiple of any two numbers
 */
-
+const lcm = function (number1, number2) {
+  if (number1 == 0 || number2 == 0) {
+    return 0;
+  }
+  for (let dividend = number1; dividend <= (number1 * number2); dividend++) {
+    if (dividend % number1 == 0 && dividend % number2 == 0) {
+      return dividend;
+    }
+  }
+};
 
 /*
   simpleInterest
