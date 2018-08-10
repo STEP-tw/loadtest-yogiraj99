@@ -29,6 +29,9 @@ const square = function (number) {
   This function takes a number and returns the mathematical cube
   of that number
 */
+const cube = function (number) {
+  return number * number * number;
+};
 
 
 /*
