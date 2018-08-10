@@ -112,6 +112,14 @@ const isDescendingOrder = function (list) {
   extractDigits
   This function extracts the digits of a given number and returns a list of digits
 */
+const pushInList = function (newList, element) {
+  newList.push(element);
+  return newList;
+};
+const extractDigits = function (number) {
+  let list = number.toString().split("");
+  return list.reduce(pushInList, []);
+};
 
 
 /*
