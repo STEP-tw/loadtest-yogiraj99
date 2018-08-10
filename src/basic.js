@@ -21,6 +21,9 @@ const isOdd = function (number) {
   of that number
 */
 
+const square = function (number) {
+  return number * number;
+};
 /*
   cube
   This function takes a number and returns the mathematical cube
