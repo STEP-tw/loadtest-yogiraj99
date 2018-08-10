@@ -43,7 +43,18 @@ const sumUp = function (list, initialValue) {
   greatestInList
   This function provides the greatest number in a list, given a list of numbers
 */
-
+const giveGreater = function (num1, num2) {
+  if (num1 > num2) {
+    return num1;
+  }
+  return num2;
+};
+const greatestInList = function (list) {
+  if (list === []) {
+    return undefined;
+  }
+  return list.reduce(giveGreater, list[0]);
+};
 
 /*
   leastInList
