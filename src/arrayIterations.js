@@ -10,7 +10,10 @@ const selectOdd = function (list) {
   selectEven
   This function selects all the even numbers from a given list of numbers
 */
-
+const isEven = require('./basic').isEven;
+const selectEven = function (list) {
+  return list.filter(isEven);
+};
 
 /*
   sumUp
