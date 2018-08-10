@@ -60,7 +60,18 @@ const greatestInList = function (list) {
   leastInList
   This function provides the lowest number in a list, given a list of numbers
 */
-
+const least = function (num1, num2) {
+  if (num1 < num2) {
+    return num1;
+  }
+  return num2;
+}
+const leastInList = function (list) {
+  if (list === []) {
+    return undefined;
+  }
+  return list.reduce(least, list[0]);
+}
 
 /*
   mapLengths
