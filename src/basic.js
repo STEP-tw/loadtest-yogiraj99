@@ -3,7 +3,9 @@
   This function takes a number and returns true or false
   based on whether the number is even or not
 */
-
+const isEven = function (number) {
+  return number % 2 === 0;
+};
 /*
   isOdd
   This function takes a number and returns true or false
@@ -35,7 +37,6 @@
 */
 
 
-
 /*
   simpleInterest
   This function returns the simple interest calculated when given
@@ -62,13 +63,13 @@
 */
 
 
-exports.isEven=isEven;
-exports.isOdd=isOdd;
-exports.square=square;
-exports.cube=cube;
-exports.gcd=gcd;
-exports.lcm=lcm;
-exports.simpleInterest=simpleInterest;
-exports.compoundInterest=compoundInterest;
-exports.greatestOf=greatestOf;
-exports.averageOf=averageOf;
+exports.isEven = isEven;
+exports.isOdd = isOdd;
+exports.square = square;
+exports.cube = cube;
+exports.gcd = gcd;
+exports.lcm = lcm;
+exports.simpleInterest = simpleInterest;
+exports.compoundInterest = compoundInterest;
+exports.greatestOf = greatestOf;
+exports.averageOf = averageOf;
